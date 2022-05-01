@@ -74,7 +74,7 @@ public class FragmentKrop extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_fragment_krop, container, false);
+        View v = inflater.inflate(R.layout.fragment_krop, container, false);
 
         kropView = v.findViewById(R.id.krop_view);
         kropView.setBitmap(mBitmap);

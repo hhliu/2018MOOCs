@@ -1,5 +1,6 @@
 <!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +20,6 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:drawableStart="@drawable/ic_moneycare"
             android:drawablePadding="5dp"
             android:gravity="center"
             android:shadowColor="@color/white"
@@ -27,7 +27,8 @@
             android:shadowRadius="1"
             android:text="@string/lb_addAccountBanner"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_moneycare" />
 
         <Button
             android:id="@+id/sButton"

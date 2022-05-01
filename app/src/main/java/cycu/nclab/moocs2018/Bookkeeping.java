@@ -279,6 +279,7 @@ public class Bookkeeping extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CAMERA: {
                 // If request is cancelled, the result arrays are empty.
@@ -287,7 +288,7 @@ public class Bookkeeping extends AppCompatActivity implements View.OnClickListen
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                     Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(cInt,MY_IMAGE_CAPTURE_CODE);
+                    startActivityForResult(cInt, MY_IMAGE_CAPTURE_CODE);
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.

@@ -14,5 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_dog_rotate_right_1" />
+        app:srcCompat="@drawable/ic_dog_rotate_right_1"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
