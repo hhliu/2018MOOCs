@@ -1,11 +1,12 @@
 package cycu.nclab.moocs2018;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Bookkeeping extends AppCompatActivity implements View.OnClickListener {
     final String TAG = this.getClass().getSimpleName();
