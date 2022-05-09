@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class FragmentCuteDog extends Fragment {
+    final String TAG = this.getClass().getSimpleName();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -95,6 +98,7 @@ public class FragmentCuteDog extends Fragment {
 
     @Override
     public void onStop() {
+        myHandler.removeCallbacksAndMessages(null);
         super.onStop();
     }
 
@@ -105,18 +109,21 @@ public class FragmentCuteDog extends Fragment {
             switch (msg.what) {
                 case IMAGE_ONE:
                     iv.setImageResource(R.drawable.ic_dog_rotate_right_1);
+                    Log.d(TAG, "Image_one: " + SystemClock.elapsedRealtime());
                     msg = this.obtainMessage();
                     msg.what = IMAGE_TWO;
                     myHandler.sendMessageDelayed(msg, interval); // 0.2秒後執行
                     break;
                 case IMAGE_TWO:
                     iv.setImageResource(R.drawable.ic_dog_rotate_right_2);
+                    Log.d(TAG, "Image_two: " + SystemClock.elapsedRealtime());
                     msg = this.obtainMessage();
                     msg.what = IMAGE_THREE;
                     myHandler.sendMessageDelayed(msg, interval); // 0.2秒後執行
                     break;
                 case IMAGE_THREE:
                     iv.setImageResource(R.drawable.ic_dog_rotate_right_3);
+                    Log.d(TAG, "Image_trhee: " + SystemClock.elapsedRealtime());
                     msg = this.obtainMessage();
                     msg.what = IMAGE_ONE;
                     myHandler.sendMessageDelayed(msg, interval); // 0.2秒後執行

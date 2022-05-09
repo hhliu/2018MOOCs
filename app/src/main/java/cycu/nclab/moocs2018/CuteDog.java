@@ -42,10 +42,11 @@ public class CuteDog extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        myHandler.removeCallbacksAndMessages(null);
         super.onStop();
     }
 
-    private Handler myHandler = new Handler(Looper.getMainLooper()){
+    private final Handler myHandler = new Handler(Looper.getMainLooper()){
 
         @Override
         public void handleMessage(Message msg) {
